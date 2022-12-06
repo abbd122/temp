@@ -1,10 +1,8 @@
-<UI version="4.0" >
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
  <class>demoClass</class>
- <widget class="QWidget" name="demoClass" >
-  <property name="objectName" >
-   <string notr="true">demoClass</string>
-  </property>
-  <property name="geometry" >
+ <widget class="QWidget" name="demoClass">
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
@@ -12,14 +10,47 @@
     <height>400</height>
    </rect>
   </property>
-  <property name="windowTitle" >
+  <property name="windowTitle">
    <string>demo</string>
-  </property>$centralwidget$
+  </property>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>80</y>
+     <width>241</width>
+     <height>151</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>PushButton</string>
+   </property>
+  </widget>
  </widget>
- <layoutDefault spacing="6" margin="11" />
- <pixmapfunction></pixmapfunction>
+ <layoutdefault spacing="6" margin="11"/>
  <resources>
-   <include location="demo.qrc"/>
+  <include location="demo.qrc"/>
  </resources>
- <connections/>
-</UI>
+ <connections>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>demoClass</receiver>
+   <slot>PushBottonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>303</x>
+     <y>182</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>311</x>
+     <y>261</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>PushBottonClicked()</slot>
+  <slot>PrintRes()</slot>
+ </slots>
+</ui>

@@ -1,16 +1,28 @@
 #pragma once
 
 #include <QtWidgets/QWidget>
+#include <QList>
+
+#include "threadpool.h"
 #include "ui_demo.h"
 
-class demo : public QWidget {
+class Demo : public QWidget {
 	Q_OBJECT
 
 public:
-	demo(QWidget* parent = nullptr);
+	Demo(ThreadPool& pool, QWidget* parent = nullptr);
 
-	~demo();
+	~Demo() override = default;
 
 private:
 	Ui::demoClass ui;
+
+	ThreadPool& m_pool;
+
+	int m_num{};
+
+	int Task(int num);
+
+public slots:
+	void PushBottonClicked();
 };
